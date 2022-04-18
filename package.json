@@ -4,5 +4,26 @@
   "description": "web application for future trasportion systems",
   "main": "index.js",
   "author": "dragon cats",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "8",
+    "eslint": "4.x",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.6.2"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "dev": "nodemon index.mjs",
+    "eslint": "eslint . --ext .js && eslint . --ext .mjs",
+    "prettier-format": "prettier --write ."
+  },
+  "repository": "https://github.com/N3rd-H3rd-42/fts-webapp-2.git"
 }

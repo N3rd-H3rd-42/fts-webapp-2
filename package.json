@@ -1,0 +1,8 @@
+{
+  "name": "fts-webapp",
+  "version": "1.0.0",
+  "description": "web application for future trasportion systems",
+  "main": "index.js",
+  "author": "dragon cats",
+  "license": "MIT"
+}

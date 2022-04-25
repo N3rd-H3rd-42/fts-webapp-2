@@ -1,3 +1,10 @@
+@import url(./about.css);
+@import url(./apply.css);
+@import url(./contact.css);
+@import url(./home.css);
+@import url(./dashboard.css);
+@import url(./register.css);
+
 * {
   box-sizing: border-box;
 }

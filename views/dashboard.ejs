@@ -6,5 +6,9 @@
 </head>
 <body>
     dashboard
+    <h1>Welcome, <%= user.name %> </h1>
+    <form action="/logout?_method=DELETE" method="post">
+        <button type="submit">logout</button>
+    </form>
 </body>
 </html>

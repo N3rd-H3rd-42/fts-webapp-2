@@ -14,7 +14,7 @@ router.get('/contact', (request, response) => response.render('contact'));
 
 router
   .route('/login')
-  .get(checkIsNotAuthenticated, (request, response) => response.render('login'))
+  .get((request, response) => response.render('login', { message: null }))
   .post(
     checkIsNotAuthenticated,
     passport.authenticate('local', {
@@ -26,11 +26,13 @@ router
 
 router
   .route('/dashboard')
-  .get(checkAuthenticated, (request, response) => response.render('dashboard'));
+  .get(checkAuthenticated, (request, response) =>
+    response.render('dashboard', { user: request.user })
+  );
 
 router.route('/logout').delete((request, response) => {
   request.logOut();
-  return response.render('/login', { message: 'Successfully logged out' });
+  return response.render('login', { message: 'Successfully logged out' });
 });
 
 export default router;

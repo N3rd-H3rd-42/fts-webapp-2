@@ -1,9 +1,13 @@
-import express from 'express';
 import dotenv from 'dotenv';
+import console from 'console';
+import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import router from './server/index.mjs';
-dotenv.config();
+
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.config();
+}
 
 const app = express();
 const PORT = process.env.PORT || 3000;

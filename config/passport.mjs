@@ -1,5 +1,5 @@
 import passportLocal from 'passport-local';
-import bcrypt from 'bcrypt';
+// import bcrypt from 'bcrypt';
 
 export const initializePassportStrategy = (
   passport,
@@ -13,7 +13,8 @@ export const initializePassportStrategy = (
     }
 
     try {
-      const isMatch = await bcrypt.compare(password, user.password);
+      //   const isMatch = await bcrypt.compare(password, user.password);
+      const isMatch = (await password) === user.password;
       if (isMatch) {
         return done(null, user);
       } else {

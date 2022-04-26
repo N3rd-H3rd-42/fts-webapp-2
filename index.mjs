@@ -7,6 +7,7 @@ import router from './server/index.mjs';
 import passport from 'passport';
 import flash from 'express-flash';
 import session from 'express-session';
+import methodOverride from 'method-override';
 import { initializePassportStrategy } from './config/passport.mjs';
 
 if (process.env.NODE_ENV !== 'production') {
@@ -17,8 +18,16 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const { ADMIN_ID, ADMIN_EMAIL, ADMIN_PASSWORD, SESSION_SECRET } = process.env;
-const users = [{ id: ADMIN_ID, email: ADMIN_EMAIL, password: ADMIN_PASSWORD }];
+const { ADMIN_ID, ADMIN_EMAIL, ADMIN_PASSWORD, ADMIN_NAME, SESSION_SECRET } =
+  process.env;
+const users = [
+  {
+    id: ADMIN_ID,
+    email: ADMIN_EMAIL,
+    password: ADMIN_PASSWORD,
+    name: ADMIN_NAME,
+  },
+];
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
@@ -33,6 +42,7 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(methodOverride('_method'));
 
 initializePassportStrategy(
   passport,

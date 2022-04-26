@@ -3,7 +3,7 @@
 @import url(./contact.css);
 @import url(./home.css);
 @import url(./dashboard.css);
-@import url(./register.css);
+@import url(./login.css);
 
 * {
   box-sizing: border-box;

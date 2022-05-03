@@ -28,6 +28,7 @@
   },
   "scripts": {
     "prepare": "husky install",
+    "start": "nodemon index.mjs",
     "dev": "nodemon index.mjs",
     "eslint": "eslint . --ext .js && eslint . --ext .mjs",
     "prettier-format": "prettier --write ."

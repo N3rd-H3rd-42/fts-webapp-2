@@ -4,6 +4,7 @@
 @import url(./home.css);
 @import url(./dashboard.css);
 @import url(./login.css);
+@import url(./footer.css);
 
 * {
   box-sizing: border-box;

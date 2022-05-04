@@ -64,7 +64,6 @@
   color: #000000;
 }
 
-
 .home-about-section h1 {
   text-decoration: underline solid red;
 }
@@ -85,23 +84,144 @@
   align-items: center;
 }
 
-
 #cards-section {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
   height: 50vh;
   width: 80%;
 }
 
-#cards-section div {
-background-color: rgba(122, 0, 0, 0.726);
-height: 100%;
-width: 80%;
-padding: 20px;
-border: 15px solid white;
+.home-cards {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-bottom: 50px solid white;
+  flex-wrap: wrap;
+  text-align: center;
+  text-overflow: ellipsis;
+  word-wrap: normal;
 }
 
-#cards-section p {
-color: black;
+.card1 {
+  background-color: rgb(170, 15, 15);
+}
+
+.card2 {
+  border-left: 5px solid white;
+  border-right: 5px solid white;
+  background-color: rgb(126, 7, 7);
+}
+
+.card3 {
+  background-color: rgb(107, 11, 11);
+}
+
+#cards-section p,
+h2 {
+  color: white;
+}
+
+.card-icon {
+  height: 100px;
+}
+
+#request-a-ride-section {
+  width: 80%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(218, 62, 62);
+  border-bottom: 50px solid white;
+  color: white;
+  padding: 15px;
+}
+
+#ride-form {
+  height: 50%;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+
+#ride-form input {
+  height: 50px;
+  width: 60%;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 1px 1px rgba(255, 54, 54, 0.966) inset;
+  padding-left: 10px;
+}
+
+#request-a-ride-section button {
+  height: 50px;
+  width: 150px;
+  background-color: rgb(38, 155, 38);
+  border-radius: 50px;
+}
+
+#drive-with-fts {
+  height: 38vh;
+  width: 80%;
+  background-image: url("../images/med_doc.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+}
+
+#drive-with-fts h1,
+h3 {
+  position: relative;
+}
+
+#drive-with-fts-img {
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 9999;
+}
+
+.drive-with-fts-overlay {
+  position: absolute;
+  width: 80%;
+  height: 38vh;
+  background-color: rgba(56, 0, 0, 0.541);
+}
+
+.bottom-overlay {
+  width: 100%;
+  position: relative;
+  background-color: rgba(255, 0, 0, 0.432);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.home-apply-btn {
+  width: 50%;
+  height: 10%;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 50px;
+  position: relative;
+  color: white;
+}
+
+
+.drive-with-fts-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }

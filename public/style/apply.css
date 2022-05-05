@@ -1,1 +1,13 @@
 /* style sheet for apply page */
+.application-form {
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    float: left;
+}
+
+.application-form input {
+    padding-left: 10px;
+}

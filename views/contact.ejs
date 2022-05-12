@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include('./partials/head') %>
-    <title>FTS - Contact</title>
+        <title>FTS - Contact</title>
 </head>
+
 <body>
-    <%- include('./partials/navbar') %> 
-    Contact
+    <%- include('./partials/navbar') %>
+    <div class="heading-container">
+        <div class="overlay"></div>
+        <h1 class="heading-h1">CONTACT US</h1>
+    </div>
+
+        <div class="apply-details-container">
+            <h3>Please complete the ride request form below.</h3>
+        </div>
+
+        <div class="application-form-container">
+            <form action="" class="application-form">
+                <label class="application-form-label" for="name">Name</label>
+                <input type="text" />
+                <label class="application-form-label" for="name">Customer Id</label>
+                <input type="text" />
+                <label class="application-form-label" for="name">Location</label>
+                <input type="text" />
+            </form>
+        </div>
+        <%- include('./partials/footer') %>
 </body>
+
 </html>

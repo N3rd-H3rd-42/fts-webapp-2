@@ -3,35 +3,45 @@
 
 <head>
     <%- include('./partials/head') %>
-        <title>FTS - Apply</title>
+    <title>FTS - Apply</title>
 </head>
 
 <body>
     <%- include('./partials/navbar') %>
-        <div class="apply-header">
-            <h1>
-                Application
-            </h1>
-
-            <h3>Summary</h3>
-            <h3>Requirements</h3>
-        </div>
-
-        <div class="apply-details-container">
-            <h3>How to apply</h3>
-        </div>
-
-        <div class="application-form-container">
-            <form action="" class="application-form">
-                <input type="text" />
-                <input type="text" />
-                <input type="text" />
-                <input type="text" />
-                <input type="text" />
-                <input type="text" />
-                <input type="text" />
-            </form>
-        </div>
+   
+    <div class="heading-container">
+        <div class="overlay"></div>
+        <h1 class="heading-h1">APPLY</h1>
+    </div>
+        
+        <h3>Summary</h3>
+        <h3>Requirements</h3>
+    </div>
+    
+    <div class="apply-details-container">
+        <h3>How to apply</h3>
+        <h3>Want to drive for Future Trans Systems? Read more...</h3>
+    </div>
+    
+    <div class="application-form-container">
+        <form action="" class="application-form">
+            <label class="application-form-label" for="name">Name</label>
+            <input type="file" />
+            <label class="application-form-label" for="name">Name</label>
+            <input type="file" />
+            <label class="application-form-label" for="name">Name</label>
+            <input type="file" />
+            <label class="application-form-label" for="name">Name</label>
+            <input type="file" />
+            <label class="application-form-label" for="name">Name</label>
+            <input type="text" />
+            <label class="application-form-label" for="name">Name</label>
+            <input type="text" />
+            <label class="application-form-label" for="name">Name</label>
+            <input type="text" />
+        </form>
+    </div>
+    <%- include('./partials/footer') %>
 </body>
 
 </html>

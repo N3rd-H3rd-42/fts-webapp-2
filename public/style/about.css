@@ -1,6 +1,6 @@
 /* style sheet for about page */
 .about-container {
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -11,7 +11,7 @@
   height: 300px;
 }
 
-.about-heading-container {
+.heading-container {
     height: 30vh;
     width: 100%;
     background-image: url('../images/pexels-karolina-grabowska-4386467.jpg');
@@ -21,16 +21,6 @@
     color: rgb(243, 242, 242);
     font-size: 48px;
     text-shadow: 3px 1px 3px rgb(37, 37, 37);
-
-}
-
-.about-top-section {
-  width: 80%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 25px 25px 0px 25px;
 }
 
 .about-bottom-section {

@@ -83,3 +83,28 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
+/* style sheet for contact page */
+.overlay {
+  position: absolute;
+  background-color: rgba(145, 0, 0, 0.61);
+  height: 15vh;
+  width: 100%;
+}
+
+.heading-h1 {
+  position: relative;
+  padding-left: 20px;
+}
+
+.heading-container {
+  height: 15vh;
+  width: 100%;
+  background-image: url('../images/pexels-karolina-grabowska-4386467.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+  color: rgb(243, 242, 242);
+  font-size: 48px;
+  text-shadow: 3px 1px 3px rgb(37, 37, 37);
+}

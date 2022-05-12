@@ -1,1 +1,67 @@
 /* style sheet for register page */
+#login-form {
+    height: 34.5vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-image: url('../images/medical_clinic.jpg'); */
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#login-form input {
+    height: 90%;
+    width: 90%;
+    border-radius: 20px;
+    border: 1px solid inset;
+    padding-left: 10px;
+    position: relative;
+}
+
+#login-form label {
+    color: white;
+    font-size: 36px;
+    position: relative;
+}
+
+.admin-login-button {
+    height: 10%;
+    width: 20%;
+    border-radius: 20px;
+    float: right;
+    position: relative;
+}
+
+#login-overlay {
+    position: absolute;
+    height: 35%;
+    width: 100%;
+}
+
+/* style sheet for contact page */
+.overlay {
+    position: absolute;
+    background-color: rgba(27, 27, 27, 0.219);
+    height: 20vh;
+    width: 80%;
+  }
+  
+  .heading-h1 {
+    position: relative;
+    padding-left: 20px;
+  }
+  
+  .heading-container {
+    height: 30vh;
+    width: 100%;
+    background-image: url('../images/pexels-karolina-grabowska-4386467.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    color: rgb(243, 242, 242);
+    font-size: 48px;
+    text-shadow: 3px 1px 3px rgb(37, 37, 37);
+}

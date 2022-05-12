@@ -1,1 +1,52 @@
 /* style sheet for apply page */
+.apply-header {
+    width: 80%;
+    height: 10vh;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.application-form {
+    /* height: 30vh; */
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-bottom: 25px;
+}
+
+.application-form input {
+    height: 60px;
+    width: 100%;
+    padding-left: 10px;
+    border-radius: 10px;
+}
+
+.application-form-label {
+    color: red;
+}
+
+/* style sheet for contact page */
+.overlay {
+    position: absolute;
+    background-color: rgba(27, 27, 27, 0.219);
+    height: 20vh;
+    width: 80%;
+  }
+  
+  .heading-h1 {
+    position: relative;
+    padding-left: 20px;
+  }
+  
+  .heading-container {
+    height: 30vh;
+    width: 100%;
+    background-image: url('../images/pexels-karolina-grabowska-4386467.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    color: rgb(243, 242, 242);
+    font-size: 48px;
+    text-shadow: 3px 1px 3px rgb(37, 37, 37);
+}

@@ -1,20 +1,15 @@
 /* style sheet for register page */
 #login-form {
-    height: 34.5vh;
-    width: 100%;
+    width: 30%;
+    height: 35vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
-    /* background-image: url('../images/medical_clinic.jpg'); */
-    background-position: left;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 #login-form input {
-    height: 90%;
-    width: 90%;
+    width: 50%;
+    height: 50px;
     border-radius: 20px;
     border: 1px solid inset;
     padding-left: 10px;
@@ -22,23 +17,13 @@
 }
 
 #login-form label {
-    color: white;
-    font-size: 36px;
-    position: relative;
+    color: rgb(66, 66, 66);
 }
 
 .admin-login-button {
     height: 10%;
-    width: 20%;
+    width: 45%;
     border-radius: 20px;
-    float: right;
-    position: relative;
-}
-
-#login-overlay {
-    position: absolute;
-    height: 35%;
-    width: 100%;
 }
 
 /* style sheet for contact page */

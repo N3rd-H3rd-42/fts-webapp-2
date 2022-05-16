@@ -1,96 +1,13 @@
 import express from 'express';
-import PatientModel from '../../models/Patient.mjs';
+import { patientController } from './patient.contoller.mjs';
 
 const router = express.Router();
 
 router
   .route('/patient')
-  .post(async (request, response) => {
-    const patientList = PatientModel.find();
-    const {
-      firstName,
-      lastName,
-      ahcccsId,
-      locationName,
-      locationAdress,
-      phoneNumber,
-      prefferedDriver,
-    } = request;
-    if (
-      !firstName ||
-      !lastName ||
-      !ahcccsId ||
-      !locationName ||
-      !locationAdress ||
-      !phoneNumber ||
-      !prefferedDriver
-    ) {
-      return response.render('dashboard', {
-        user: request.user,
-        error: 'Error with request',
-        patientList,
-      });
-    } else {
-      const isPresent = await PatientModel.find({ ahcccsId });
-      if (isPresent) {
-        return response.render('dashboard', {
-          user: request.user,
-          error: 'Patient already in system',
-          patientList,
-        });
-      } else {
-        const newPatient = await new PatientModel({
-          firstName,
-          lastName,
-          ahcccsId,
-          locationName,
-          locationAdress,
-          phoneNumber,
-          prefferedDriver,
-        });
-        await PatientModel.bulkSave(newPatient);
-        const newPatientList = await PatientModel.find();
-        return response.render('dashboard', {
-          user: request.user,
-          patientList: newPatientList,
-        });
-      }
-    }
-  })
-  .put(async (request, response) => {
-    const {
-      id,
-      firstName,
-      lastName,
-      ahcccsId,
-      locationName,
-      locationAdress,
-      phoneNumber,
-      prefferedDriver,
-    } = request;
-    const targetPatient = await PatientModel.findById({ _id: id });
-    if (!targetPatient) {
-      const patientList = await PatientModel.find();
-      return response.render('dashboard', {
-        user: request.user,
-        error: 'error updating patient contant system admin',
-        patientList,
-      });
-    } else {
-      if (firstName) targetPatient.firstName = firstName;
-      if (lastName) targetPatient.lastName = lastName;
-      if (ahcccsId) targetPatient.ahcccsId = ahcccsId;
-      if (locationName) targetPatient.locationName = locationName;
-      if (locationAdress) targetPatient.locationAdress = locationAdress;
-      if (phoneNumber) targetPatient.phoneNumber = phoneNumber;
-      if (prefferedDriver) targetPatient.prefferedDriver = prefferedDriver;
-      await PatientModel.bulkSave(targetPatient);
-      const newPatientList = await PatientModel.find();
-      return response.render('dashboard', {
-        user: request.user,
-        patientList: newPatientList,
-      });
-    }
-  });
+  .post(patientController.createOne)
+  .put(patientController.updateOne);
+
+router.route('/patient/toggle-active').put(patientController.toggleActive);
 
 export default router;

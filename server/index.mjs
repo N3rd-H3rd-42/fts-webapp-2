@@ -4,6 +4,7 @@ import {
   checkAuthenticated,
   checkIsNotAuthenticated,
 } from '../middleware/authMiddleware.mjs';
+import apiRoutes from './api/index.mjs';
 
 const router = express.Router();
 
@@ -34,5 +35,7 @@ router.route('/logout').delete((request, response) => {
   request.logOut();
   return response.render('login', { message: 'Successfully logged out' });
 });
+
+router.use('/api', apiRoutes);
 
 export default router;

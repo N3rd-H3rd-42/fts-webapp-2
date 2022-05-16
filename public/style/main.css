@@ -37,7 +37,6 @@ body {
   text-align: center;
 }
 
-
 .nav-links-wrapper {
   width: 100%;
   display: flex;
@@ -54,20 +53,20 @@ body {
 .nav-phone-number {
   background-color: rgb(194, 46, 46);
   border-radius: 20px;
-  color: white!important;
+  color: white !important;
   padding: 15px;
   width: 300px;
 }
 
 .ride-anchor {
   background-color: rgb(194, 46, 46);
-  color: white!important;
+  color: white !important;
   padding: 15px;
 }
 
 .contact-anchor {
   background-color: rgb(0, 0, 0);
-  color: white!important;
+  color: white !important;
   padding: 15px;
 }
 

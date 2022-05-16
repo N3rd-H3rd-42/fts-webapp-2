@@ -3,7 +3,7 @@ import console from 'console';
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import router from './server/index.mjs';
+import routerRoutes from './server/index.mjs';
 import passport from 'passport';
 import flash from 'express-flash';
 import session from 'express-session';
@@ -15,12 +15,20 @@ if (process.env.NODE_ENV !== 'production') {
   dotenv.config();
 }
 
+const {
+  ADMIN_ID,
+  ADMIN_EMAIL,
+  ADMIN_PASSWORD,
+  ADMIN_NAME,
+  SESSION_SECRET,
+  NODE_ENV,
+  MONGO_URI,
+} = process.env;
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const { ADMIN_ID, ADMIN_EMAIL, ADMIN_PASSWORD, ADMIN_NAME, SESSION_SECRET } =
-  process.env;
 const users = [
   {
     id: ADMIN_ID,
@@ -51,8 +59,9 @@ initializePassportStrategy(
   (id) => users.find((user) => user.id === id)
 );
 
-mongoose.connect(process.env.MONGO_URI, {}, console.log('db conntected'));
+mongoose.connect(MONGO_URI, {}, () => console.log('db conntected'));
 
-app.use('/', router);
-
-app.listen(PORT, () => console.log(`webapp running on port ${PORT}`));
+app.use('/', routerRoutes);
+app.listen(PORT, () =>
+  console.log(`webapp running in ${NODE_ENV} mode on port ${PORT}`)
+);

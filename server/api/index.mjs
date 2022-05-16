@@ -5,7 +5,7 @@ const router = express.Router();
 
 router
   .route('/patient')
-  .post((request, response) => {
+  .post(async (request, response) => {
     const patientList = PatientModel.find();
     const {
       firstName,
@@ -31,7 +31,7 @@ router
         patientList,
       });
     } else {
-      const isPresent = PatientModel.find({ ahcccsId });
+      const isPresent = await PatientModel.find({ ahcccsId });
       if (isPresent) {
         return response.render('dashboard', {
           user: request.user,
@@ -39,7 +39,7 @@ router
           patientList,
         });
       } else {
-        const newPatient = new PatientModel({
+        const newPatient = await new PatientModel({
           firstName,
           lastName,
           ahcccsId,
@@ -48,8 +48,8 @@ router
           phoneNumber,
           prefferedDriver,
         });
-        PatientModel.bulkSave(newPatient);
-        const newPatientList = PatientModel.find();
+        await PatientModel.bulkSave(newPatient);
+        const newPatientList = await PatientModel.find();
         return response.render('dashboard', {
           user: request.user,
           patientList: newPatientList,
@@ -57,13 +57,40 @@ router
       }
     }
   })
-  .put((request, response) => {
-    const patientList = PatientModel.find();
-    return response.render('dashboard', {
-      user: request.user,
-      error: 'Error with request',
-      patientList,
-    });
+  .put(async (request, response) => {
+    const {
+      id,
+      firstName,
+      lastName,
+      ahcccsId,
+      locationName,
+      locationAdress,
+      phoneNumber,
+      prefferedDriver,
+    } = request;
+    const targetPatient = await PatientModel.findById({ _id: id });
+    if (!targetPatient) {
+      const patientList = await PatientModel.find();
+      return response.render('dashboard', {
+        user: request.user,
+        error: 'error updating patient contant system admin',
+        patientList,
+      });
+    } else {
+      if (firstName) targetPatient.firstName = firstName;
+      if (lastName) targetPatient.lastName = lastName;
+      if (ahcccsId) targetPatient.ahcccsId = ahcccsId;
+      if (locationName) targetPatient.locationName = locationName;
+      if (locationAdress) targetPatient.locationAdress = locationAdress;
+      if (phoneNumber) targetPatient.phoneNumber = phoneNumber;
+      if (prefferedDriver) targetPatient.prefferedDriver = prefferedDriver;
+      await PatientModel.bulkSave(targetPatient);
+      const newPatientList = await PatientModel.find();
+      return response.render('dashboard', {
+        user: request.user,
+        patientList: newPatientList,
+      });
+    }
   });
 
 export default router;

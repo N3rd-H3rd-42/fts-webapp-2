@@ -1,10 +1,13 @@
 import express from 'express';
-// import console from 'console';
+import { patientController } from './patient.contoller.mjs';
 
 const router = express.Router();
 
-router.route('/client').post((request, response) => {
-  return response.redirect('dashboard', { user: request.user });
-});
+router
+  .route('/patient')
+  .post(patientController.createOne)
+  .put(patientController.updateOne);
+
+router.route('/patient/toggle-active').put(patientController.toggleActive);
 
 export default router;

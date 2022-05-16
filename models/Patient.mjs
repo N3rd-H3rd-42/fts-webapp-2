@@ -26,6 +26,7 @@ const PatientSchema = new mongoose.Schema({
   },
   isActive: {
     type: Boolean,
+    default: true,
   },
   registerDate: {
     type: Date,

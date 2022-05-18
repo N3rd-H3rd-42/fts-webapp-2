@@ -58,6 +58,68 @@ body {
   width: 300px;
 }
 
+/* mobile nav */
+.mobile-nav-toggle {
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+  position: fixed;
+  right: 15px;
+  top: 15px;
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+}
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  transition: 0.3s;
+  z-index: 999;
+  margin-top: 0;
+}
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 45px;
+  left: 15px;
+  padding: 10px 0;
+  overflow-y: auto;
+  transition: 0.3s;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+.navbar-mobile li {
+  padding: 12px 20px;
+}
+.navbar-mobile li + li {
+  margin: 0;
+}
+.navbar-mobile a, .navbar-mobile a:focus {
+  font-size: 16px;
+  position: relative;
+}
+
 .ride-anchor {
   background-color: rgb(194, 46, 46);
   color: white !important;
@@ -99,11 +161,48 @@ body {
 .heading-container {
   height: 15vh;
   width: 100%;
-  background-image: url('../images/pexels-karolina-grabowska-4386467.jpg');
+  background-image: url("../images/pexels-karolina-grabowska-4386467.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left;
   color: rgb(243, 242, 242);
   font-size: 48px;
   text-shadow: 3px 1px 3px rgb(37, 37, 37);
+}
+
+@media screen and (max-width: 768px) {
+  #request-a-ride-section {
+    display: block;
+    padding: 10px;
+  }
+  .need-to-register {
+    margin-top: 15px;
+    width: 100%;
+    height: 70%;
+    padding: 10px;
+  }
+  #cards-section {
+    display: block;
+    height: 100%;
+  }
+  .card2 {
+    border-left: none;
+    border-right: none;
+  }
+  .drive-with-fts-overlay {
+    height: 85%;
+  }
+  .home-apply-btn {
+    width: 80%;
+  }
+  #footer {
+    display: block;
+    padding: 10px;
+  }
+  .footer-nav a {
+    padding-top: 10px;
+  }
+  #sub-footer {
+    padding-top: 15px;
+  }
 }

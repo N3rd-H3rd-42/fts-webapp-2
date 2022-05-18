@@ -85,14 +85,12 @@
 }
 
 #cards-section {
-  width: 100%;
   height: 30vh;
   display: flex;
   flex-direction: row;
 }
 
 .home-cards {
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,6 +100,8 @@
   text-align: center;
   text-overflow: ellipsis;
   word-wrap: normal;
+  padding: 15px;
+  color: white;
 }
 
 .card1 {
@@ -131,30 +131,53 @@ h2 {
   width: 100%;
   height: 50vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-evenly;
   align-items: center;
   background-color: rgb(218, 62, 62);
   color: white;
   padding: 15px;
 }
 
+.request-a-ride-form-container {
+  height: 98%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 3px solid white;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.need-to-register {
+  height: 98%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 15px;
+  border: 3px solid white;
+  border-radius: 10px;
+}
+
 #ride-form {
-  height: 50%;
-  width: 100%;
+  height: 60%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   padding-top: 15px;
 }
 
 #ride-form input {
   height: 50px;
-  width: 60%;
+  width: 100%;
   border-radius: 10px;
   border: none;
   box-shadow: 1px 1px rgba(255, 54, 54, 0.966) inset;
   padding-left: 10px;
+  margin-top: 15px;
 }
 
 #request-a-ride-section button {
@@ -162,10 +185,15 @@ h2 {
   width: 150px;
   background-color: rgb(38, 155, 38);
   border-radius: 50px;
+  margin-top: 15px;
+  float: right;
+  border: 3px solid white;
+  background-color: rgb(218, 62, 62);
+  color: white;
 }
 
 #drive-with-fts {
-  height: 38vh;
+  height: 50vh;
   width: 100%;
   background-image: url("../images/med_doc.jpg");
   background-position: center;
@@ -173,14 +201,31 @@ h2 {
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   color: white;
+}
+
+#drive-with-fts img {
+  height: 100px;
+  margin-top: -150px;
 }
 
 #drive-with-fts h1,
 h3 {
   position: relative;
+}
+
+#drive-with-fts h1 {
+  font-size: 40px;
+}
+
+#drive-with-fts h3 {
+  font-size: 24px;
+}
+
+#drive-with-fts p {
+  font-size: 16px;
 }
 
 #drive-with-fts-img {
@@ -193,12 +238,13 @@ h3 {
 .drive-with-fts-overlay {
   position: absolute;
   width: 100%;
-  height: 38vh;
+  height: 50vh;
   background-color: rgba(56, 0, 0, 0.541);
 }
 
 .bottom-overlay {
   width: 100%;
+  height: 250px;
   position: relative;
   background-color: rgba(255, 0, 0, 0.432);
   display: flex;
@@ -208,13 +254,15 @@ h3 {
 }
 
 .home-apply-btn {
-  width: 50%;
-  height: 10%;
+  width: 10%;
+  height: 40px;
   background-color: transparent;
   border: 2px solid white;
   border-radius: 50px;
   position: relative;
   color: white;
+  float: right;
+  margin-bottom: 125px;
 }
 
 .drive-with-fts-container {
@@ -222,4 +270,9 @@ h3 {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.drive-with-fts-container p {
+  width: 30%;
+  padding: 15px;
 }

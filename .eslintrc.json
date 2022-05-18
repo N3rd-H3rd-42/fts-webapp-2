@@ -1,10 +1,11 @@
 {
   "parser": "babel-eslint",
-  "extends": ["eslint:recommended", "prettier"],
+  "extends": ["eslint:recommended", "prettier", "eslint-config-prettier"],
   "parserOptions": {
     "ecmaVersion": 10,
     "sourceType": "module"
   },
+  "plugings": ["prettier", "eslint-config-prettier"],
   "ecmaFeatures": {
     "modules": true
   },
@@ -15,7 +16,7 @@
   "rules": {
     "semi": ["error", "always"],
     "quotes": ["error", "single"],
-    "no-console": "off"
-    // "prettier/prettier": "error"
+    "no-console": "off",
+    "prettier/prettier": ["error"]
   }
 }

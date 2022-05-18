@@ -14,7 +14,8 @@
   },
   "rules": {
     "semi": ["error", "always"],
-    "quotes": ["error", "single"]
+    "quotes": ["error", "single"],
+    "no-console": "off"
     // "prettier/prettier": "error"
   }
 }

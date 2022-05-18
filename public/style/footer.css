@@ -10,7 +10,7 @@
 }
 
 .footer-logo {
-  background-image: url("../images/fts-logo.jpeg");
+  background-image: url('../images/fts-logo.jpeg');
   height: 100px;
   width: 100px;
   border-radius: 50%;
@@ -64,7 +64,6 @@
 #dragon-cats {
   color: rgb(6, 212, 6);
 }
-
 
 /* .contact-message-box {
 

@@ -28,8 +28,8 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "start": "nodemon index.mjs",
-    "dev": "nodemon index.mjs",
+    "dev": "set NODE_ENV=development&& nodemon index.mjs",
+    "start": "set NODE_ENV=production&& node index.mjs",
     "eslint": "eslint . --ext .js && eslint . --ext .mjs",
     "prettier-format": "prettier --write ."
   },

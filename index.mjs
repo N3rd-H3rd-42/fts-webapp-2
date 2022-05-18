@@ -8,7 +8,7 @@ import passport from 'passport';
 import flash from 'express-flash';
 import session from 'express-session';
 import methodOverride from 'method-override';
-import mongoose from 'mongoose';
+// import mongoose from 'mongoose';
 import { initializePassportStrategy } from './config/passport.mjs';
 
 if (process.env.NODE_ENV !== 'production') {
@@ -22,7 +22,7 @@ const {
   ADMIN_NAME,
   SESSION_SECRET,
   NODE_ENV,
-  MONGO_URI,
+  // MONGO_URI,
 } = process.env;
 
 const app = express();
@@ -58,8 +58,8 @@ initializePassportStrategy(
   (email) => users.find((user) => user.email === email),
   (id) => users.find((user) => user.id === id)
 );
-
-mongoose.connect(MONGO_URI, {}, () => console.log('db conntected'));
+// cause mark wants to do the mostest
+// mongoose.connect(MONGO_URI, {}, () => console.log('db conntected'));
 
 app.use('/', routerRoutes);
 app.listen(PORT, () =>
